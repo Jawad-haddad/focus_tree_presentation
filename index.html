@@ -139,6 +139,54 @@
             object-fit: cover;
             border: 2px solid #444;
         }
+        @media print {
+    body {
+        background-color: #ffffff !important; /* White background for print */
+    }
+
+    #presentation-container {
+        width: 100% !important;
+        max-width: none !important;
+        height: auto !important;
+        aspect-ratio: auto !important;
+        box-shadow: none !important;
+        background-color: #ffffff !important;
+    }
+
+    .nav-btn {
+        display: none !important; /* Hide navigation buttons */
+    }
+
+    .slide {
+        position: relative !important; /* Stack slides vertically */
+        opacity: 1 !important;
+        visibility: visible !important;
+        page-break-after: always; /* Put each slide on a new page */
+        background-color: #ffffff !important;
+        color: #000000 !important; /* Black text */
+    }
+    
+    /* Make sure all text is black for readability */
+    h1, h2, p, li, strong, .text-gray-200, .text-gray-400 {
+        color: #000000 !important;
+    }
+    
+    /* Keep your brand color for headings */
+    .text-emerald-400 {
+        color: #10B981 !important; /* A nice green for print */
+    }
+    
+    /* Make checkmarks black */
+    ul.feature-list li::before {
+        color: #000000 !important;
+    }
+    
+    /* Make brain icon black */
+    .fa-brain {
+         color: #000000 !important;
+         filter: none !important;
+    }
+}
     </style>
 </head>
 <body>
@@ -362,4 +410,5 @@
     </script>
 </body>
 </html>
+
 
